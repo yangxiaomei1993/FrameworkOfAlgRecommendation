@@ -1,0 +1,68 @@
+The 1, 3, 4 can be found from the paper "Improved Dataset Characterisation for Meta-learning"
+
+There are four different kinds of meta-features employed in our experimental
+1. The traditional data set characteristics
+   1) Number of features
+   2) Number of nominal features
+   3) Number of numerical attributes
+   4) Number of instances
+   5) Number of target concept values
+   6) Default accuracy **
+   7) Total number of missing values
+   8) Number of instances with missing values
+   9) Mean skewness of the numerical features
+   10) Mean kurtosis of the numerical features
+   11) Number of features for which the ratio between the alpha-trimmed standard
+-deviation and the standard-deviation is larget than 0.7
+   12) Boxian M-Statistic to test for equality of coveriance matices of the numerical
+attributes.
+   13) Degrees of freedom of the M-Statistic
+   14) Value of the Chi-square distribution
+   15) A transformation of the M-Statistic which assesses the information in the
+co-variance structure of the classes
+   16) Relative proportion of the total discrimination powee of the first discriminant function
+   17) Canonical correlation of the best linear combination of attributes to distinguish between classes
+   18) Discrimination power between the classes
+   19) Bartlett's V-Statistic to the significance of discriminant functions
+   20) Entropy of classes
+   21) Entropy of symbolic features
+   22) Mutual Information between symbolic attributes and classes
+   23) Average joint entropu of the symbolic features and the classes
+   24) ratio between class entropy and average mutual information, providing
+information abount the number of necessaey attributes for classification
+   25) Ratio between noise and signalm, indicating the amount of irrelevant
+information for classification
+
+2. The complexity based data set characteristics
+    1) Length of class boundary
+    2) Percentage of retained adherence subsets
+    3) Ratio of average intra/inter class nearest neighbor distances
+    4) Nonlinearity of linear classifier
+    5) Nonlinearity of NN
+    6) Maximum Fisher's discriminant ratio
+    7) Number of instances/number of features
+
+3. The model based data set characteristics
+    C5.0
+    1) Width of the tree
+    2) Height of the tree
+    3) Number of the nodes
+    4) Number of the leaves
+    5) maxLevel
+    6) meanLevel
+    7) devLevel
+    8) LongBranch
+    9) ShortBranch
+    10) MeanBranch
+    11) DevBranch
+    12) MaxAttr
+    13) MinAttr
+    14) MeanAttr
+    15) DevAttr
+    
+4. Landmarking based data set characteristics
+    1) Naive Bayes
+    2) Linear discriminant
+    3) Best node of decision tree
+    4) Worst node of decision tree
+    5) Average node of decision tree

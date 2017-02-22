@@ -1,0 +1,212 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 34096 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=159428, tid=156848
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_66-b18) (build 1.8.0_66-b18)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.66-b18 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000028c1000):  JavaThread "main" [_thread_in_native, id=156848, stack(0x00000000027c0000,0x00000000028c0000)]
+
+Stack: [0x00000000027c0000,0x00000000028c0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::load_mirror_patching Runtime1 stub
+J 11 C1 java.lang.CharacterData.of(I)Ljava/lang/CharacterData; (120 bytes) @ 0x0000000002acf8fa [0x0000000002acf440+0x4ba]
+J 19 C1 java.lang.Character.toLowerCase(I)I (9 bytes) @ 0x0000000002ad23e4 [0x0000000002ad2380+0x64]
+j  java.lang.String.toLowerCase(Ljava/util/Locale;)Ljava/lang/String;+243
+j  java.io.WinNTFileSystem.hashCode(Ljava/io/File;)I+7
+j  java.io.File.hashCode()I+4
+j  java.util.HashMap.hash(Ljava/lang/Object;)I+9
+j  java.util.HashMap.get(Ljava/lang/Object;)Ljava/lang/Object;+2
+j  sun.misc.MetaIndex.forJar(Ljava/io/File;)Lsun/misc/MetaIndex;+4
+j  sun.misc.URLClassPath$JarLoader.<init>(Ljava/net/URL;Ljava/net/URLStreamHandler;Ljava/util/HashMap;)V+103
+j  sun.misc.URLClassPath$3.run()Lsun/misc/URLClassPath$Loader;+82
+j  sun.misc.URLClassPath$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  sun.misc.URLClassPath.getLoader(Ljava/net/URL;)Lsun/misc/URLClassPath$Loader;+9
+j  sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader;+87
+j  sun.misc.URLClassPath.getNextLoader([II)Lsun/misc/URLClassPath$Loader;+84
+j  sun.misc.URLClassPath.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;+51
+j  java.net.URLClassLoader$1.run()Ljava/lang/Class;+26
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+70
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+81
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.Class.getDeclaredMethods0(Z)[Ljava/lang/reflect/Method;+0
+j  java.lang.Class.privateGetDeclaredMethods(Z)[Ljava/lang/reflect/Method;+37
+j  java.lang.Class.privateGetMethodRecursive(Ljava/lang/String;[Ljava/lang/Class;ZLjava/lang/Class$MethodArray;)Ljava/lang/reflect/Method;+2
+j  java.lang.Class.getMethod0(Ljava/lang/String;[Ljava/lang/Class;Z)Ljava/lang/reflect/Method;+16
+j  java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;+13
+j  sun.launcher.LauncherHelper.validateMainClass(Ljava/lang/Class;)V+12
+j  sun.launcher.LauncherHelper.checkAndLoadMain(ZILjava/lang/String;)Ljava/lang/Class;+214
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001d713000 JavaThread "Service Thread" daemon [_thread_blocked, id=115540, stack(0x000000001dc90000,0x000000001dd90000)]
+  0x000000001d695800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=115544, stack(0x000000001db90000,0x000000001dc90000)]
+  0x000000001c03d800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=115412, stack(0x000000001da90000,0x000000001db90000)]
+  0x000000001c03a000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=115448, stack(0x000000001d590000,0x000000001d690000)]
+  0x000000001c038000 JavaThread "Attach Listener" daemon [_thread_blocked, id=115488, stack(0x000000001d490000,0x000000001d590000)]
+  0x000000001c037800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=115468, stack(0x000000001d390000,0x000000001d490000)]
+  0x00000000029b6000 JavaThread "Finalizer" daemon [_thread_blocked, id=115452, stack(0x000000001d230000,0x000000001d330000)]
+  0x00000000029ad000 JavaThread "Reference Handler" daemon [_thread_blocked, id=115456, stack(0x000000001d130000,0x000000001d230000)]
+=>0x00000000028c1000 JavaThread "main" [_thread_in_native, id=156848, stack(0x00000000027c0000,0x00000000028c0000)]
+
+Other Threads:
+  0x000000001bfa7800 VMThread [stack: 0x000000001d030000,0x000000001d130000] [id=115472]
+  0x000000001d74d800 WatcherThread [stack: 0x000000001dd90000,0x000000001de90000] [id=115536]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 76288K, used 3932K [0x000000076b100000, 0x0000000770600000, 0x00000007c0000000)
+  eden space 65536K, 6% used [0x000000076b100000,0x000000076b4d7178,0x000000076f100000)
+  from space 10752K, 0% used [0x000000076fb80000,0x000000076fb80000,0x0000000770600000)
+  to   space 10752K, 0% used [0x000000076f100000,0x000000076f100000,0x000000076fb80000)
+ ParOldGen       total 175104K, used 0K [0x00000006c1200000, 0x00000006cbd00000, 0x000000076b100000)
+  object space 175104K, 0% used [0x00000006c1200000,0x00000006c1200000,0x00000006cbd00000)
+ Metaspace       used 2576K, capacity 4494K, committed 4864K, reserved 1056768K
+  class space    used 284K, capacity 386K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000000011d80000,0x0000000012580000] byte_map_base: 0x000000000e777000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006218a5b0
+ Begin Bits: [0x0000000012ed0000, 0x0000000016e88000)
+ End Bits:   [0x0000000016e88000, 0x000000001ae40000)
+
+Polling page: 0x0000000000a80000
+
+CodeCache: size=245760Kb used=1104Kb max_used=1104Kb free=244655Kb
+ bounds [0x00000000029c0000, 0x0000000002c30000, 0x00000000119c0000]
+ total_blobs=262 nmethods=28 adapters=148
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.088 Thread 0x000000001d695800   24  s    3       java.lang.StringBuffer::append (13 bytes)
+Event: 0.088 Thread 0x000000001d695800 nmethod 24 0x0000000002ad0390 code [0x0000000002ad0520, 0x0000000002ad0a28]
+Event: 0.088 Thread 0x000000001d695800   25       3       java.lang.String::getChars (62 bytes)
+Event: 0.088 Thread 0x000000001d695800 nmethod 25 0x0000000002ad2b10 code [0x0000000002ad2cc0, 0x0000000002ad30f8]
+Event: 0.088 Thread 0x000000001d695800   26       3       java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 0.088 Thread 0x000000001d695800 nmethod 26 0x0000000002ad3310 code [0x0000000002ad34a0, 0x0000000002ad39a8]
+Event: 0.088 Thread 0x000000001d695800   27       3       java.lang.String::indexOf (7 bytes)
+Event: 0.088 Thread 0x000000001d695800 nmethod 27 0x0000000002acff90 code [0x0000000002ad0100, 0x0000000002ad0308]
+Event: 0.101 Thread 0x000000001d695800   28       3       java.lang.StringBuilder::append (8 bytes)
+Event: 0.102 Thread 0x000000001d695800 nmethod 28 0x0000000002ad4190 code [0x0000000002ad4300, 0x0000000002ad4488]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.042 Thread 0x00000000028c1000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076b113098) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\sr<鴴榕哎?
+Event: 0.042 Thread 0x00000000028c1000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076b113380) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\j
+
+Events (10 events):
+Event: 0.100 loading class java/security/BasicPermissionCollection done
+Event: 0.101 Executing VM operation: CollectForMetadataAllocation
+Event: 0.101 Executing VM operation: CollectForMetadataAllocation done
+Event: 0.101 loading class sun/launcher/LauncherHelper$FXHelper
+Event: 0.101 loading class sun/launcher/LauncherHelper$FXHelper done
+Event: 0.101 loading class java/lang/Class$MethodArray
+Event: 0.101 loading class java/lang/Class$MethodArray done
+Event: 0.101 loading class weka/classifiers/Classifier
+Event: 0.101 loading class weka/classifiers/Classifier done
+Event: 0.102 loading class java/lang/CharacterData00
+
+
+Dynamic libraries:
+0x00007ff710650000 - 0x00007ff710687000 	C:\Program Files\Java\jre1.8.0_66\bin\javaw.exe
+0x00007ffb15990000 - 0x00007ffb15b51000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffb15680000 - 0x00007ffb1572d000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffb12120000 - 0x00007ffb12308000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffb158e0000 - 0x00007ffb15987000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffb15570000 - 0x00007ffb1560d000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffb12d80000 - 0x00007ffb12ddb000 	C:\WINDOWS\system32\sechost.dll
+0x00007ffb14f80000 - 0x00007ffb1509c000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffb15200000 - 0x00007ffb15356000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffb15380000 - 0x00007ffb15506000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffb081f0000 - 0x00007ffb08464000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.494_none_a2d8b04ea53e3145\COMCTL32.dll
+0x00007ffb13280000 - 0x00007ffb134fd000 	C:\WINDOWS\system32\combase.dll
+0x00007ffb12510000 - 0x00007ffb1257a000 	C:\WINDOWS\system32\bcryptPrimitives.dll
+0x00007ffb14ed0000 - 0x00007ffb14f0b000 	C:\WINDOWS\system32\IMM32.DLL
+0x0000000062970000 - 0x0000000062a42000 	C:\Program Files\Java\jre1.8.0_66\bin\msvcr100.dll
+0x0000000061980000 - 0x0000000062209000 	C:\Program Files\Java\jre1.8.0_66\bin\server\jvm.dll
+0x00007ffb12080000 - 0x00007ffb120a3000 	C:\WINDOWS\system32\WINMM.dll
+0x00007ffb11d80000 - 0x00007ffb11dac000 	C:\WINDOWS\system32\WINMMBASE.dll
+0x00007ffb120b0000 - 0x00007ffb120f3000 	C:\WINDOWS\system32\cfgmgr32.dll
+0x00007ffb03c70000 - 0x00007ffb03c79000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffb12de0000 - 0x00007ffb12de8000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffb07680000 - 0x00007ffb0768a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffb15610000 - 0x00007ffb1567b000 	C:\WINDOWS\system32\WS2_32.dll
+0x0000000061970000 - 0x000000006197f000 	C:\Program Files\Java\jre1.8.0_66\bin\verify.dll
+0x0000000061940000 - 0x0000000061969000 	C:\Program Files\Java\jre1.8.0_66\bin\java.dll
+0x0000000061920000 - 0x0000000061936000 	C:\Program Files\Java\jre1.8.0_66\bin\zip.dll
+0x00007ffb13970000 - 0x00007ffb14ecc000 	C:\WINDOWS\system32\SHELL32.dll
+0x00007ffb12580000 - 0x00007ffb12bc5000 	C:\WINDOWS\system32\windows.storage.dll
+0x00007ffb12df0000 - 0x00007ffb12e42000 	C:\WINDOWS\system32\shlwapi.dll
+0x00007ffb11dc0000 - 0x00007ffb11dcf000 	C:\WINDOWS\system32\kernel.appcore.dll
+0x00007ffb12400000 - 0x00007ffb124b5000 	C:\WINDOWS\system32\shcore.dll
+0x00007ffb124c0000 - 0x00007ffb1250b000 	C:\WINDOWS\system32\powrprof.dll
+0x00007ffb11dd0000 - 0x00007ffb11de4000 	C:\WINDOWS\system32\profapi.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: learnAlgRecommendation.runDifferentClassifiers
+java_class_path (initial): E:\EclipseWorkspace\FrameworkOfAlgRecommendation\bin;E:\Job\项目\王广涛\Projects\Projects\FrameworkOfAlgRecommendation\Mulan.jar;E:\Job\项目\王广涛\Projects\Projects\FrameworkOfAlgRecommendation\weka.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=C:\Program Files (x86)\Java\jdk1.6.0_05
+PATH=C:/Program Files/Java/jre1.8.0_66/bin/server;C:/Program Files/Java/jre1.8.0_66/bin;C:/Program Files/Java/jre1.8.0_66/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Java\jdk1.6.0_05\bin;C:\Program Files\MATLAB\R2012a\runtime\win64;C:\Program Files\MATLAB\R2012a\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;D:\新建文件夹;D:\texlive\2014\bin\win32;D:\eclipse-java-mars-R-win32-x86_64\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 10586 (10.0.10586.0)
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16698348k(6162792k free), swap 33475564k(1840k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.66-b18) for windows-amd64 JRE (1.8.0_66-b18), built on Nov  9 2015 10:51:13 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Sep 21 15:07:13 2016
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
